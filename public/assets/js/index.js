@@ -1,9 +1,15 @@
-const express = require("express");
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+
+// let startBtn = document.querySelector("#start");
+
+// const goToNotePage = () =>
+//   fetch("/", {
+//     method: "GET",
+//   });
 
 if (window.location.pathname === "/notes") {
   noteTitle = document.querySelector(".note-title");
@@ -27,7 +33,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch("/api/notes", {
+  fetch("/notes", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -35,7 +41,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch("/api/notes", {
+  fetch("/notes", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -44,7 +50,7 @@ const saveNote = (note) =>
   });
 
 const deleteNote = (id) =>
-  fetch(`/api/notes/${id}`, {
+  fetch(`/notes/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -105,6 +111,7 @@ const handleNoteView = (e) => {
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
+  e.preventDefault();
   activeNote = {};
   renderActiveNote();
 };
@@ -181,4 +188,5 @@ if (window.location.pathname === "/notes") {
   noteText.addEventListener("keyup", handleRenderSaveBtn);
 }
 
+// startBtn.addEventListener("click", goToNotePage);
 getAndRenderNotes();
