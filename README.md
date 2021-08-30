@@ -41,5 +41,8 @@ You may reach me by email at: <eaim928@gmail.com>
 
 You may also reach me on github: <https://github.com/gim928>
 
-Screenshots: [!Screenshot](public/assets/images/start-page.png)
-[!Screenshot](public/assets/images/Notes-page.png)
+This application is deployed at: https://infinite-lake-73740.herokuapp.com/
+and at: https://gim928.github.io/Note-Taker-App/
+
+Screenshots: ![Screenshot](public/assets/images/start-page.png)
+![Screenshot](public/assets/images/Notes-page.png)

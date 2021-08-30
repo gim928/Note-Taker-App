@@ -9,7 +9,6 @@ const app = express();
 
 // Helper method for generating unique ids
 const uuid = require("./helpers/uuid");
-const data = require("./db/db.json");
 
 //middleware for parsing JSON and url encoded from data
 app.use(express.json());
@@ -98,7 +97,7 @@ app.post("/api/notes", (req, res) => {
     readAndAppend(newNote, "./db/db.json");
 
     const response = {
-      status: "sucess",
+      status: "success",
       body: newNote,
     };
 
