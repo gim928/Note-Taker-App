@@ -51,7 +51,7 @@ const readFromFile = util.promisify(fs.readFile);
 //destination- the file you want to write to
 //content is the content you want to write to the file
 const writeToFile = (destination, content) =>
-  fs.writeFile(db.JSON, JSON.stringify(content, null, 4), (err) =>
+  fs.writeFile("./db/db.JSON", JSON.stringify(content, null, 4), (err) =>
     err ? console.error(err) : console.info(`\nData written to ${destination}`)
   );
 
